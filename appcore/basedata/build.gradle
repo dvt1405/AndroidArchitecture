@@ -1,0 +1,57 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.2"
+
+    defaultConfig {
+        minSdkVersion 21
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles 'consumer-rules.pro'
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation appDependencies.kotlinJdk
+    implementation appDependencies.appCompat
+    implementation appDependencies.coreKtx
+    implementation appDependencies.constrainLayout
+    testImplementation testDependencies.test
+    androidTestImplementation testDependencies.androidTest
+    androidTestImplementation testDependencies.androidTestEspresso
+
+    implementation retrofitDependencies.retrofit
+    implementation retrofitDependencies.retrofitRxJavaAdapter
+    implementation retrofitDependencies.retrofitGsonConverter
+    implementation 'com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:0.9.2'
+
+    implementation archComponentDependencies.roomDatabaseRunTime
+    implementation archComponentDependencies.roomDatabaseKtx
+    kapt archComponentDependencies.roomDatabaseKapt
+    androidTestImplementation archComponentDependencies.roomDatabaseTesting
+
+    implementation otherLibraryDependencies.checkApi
+
+    implementation("com.squareup.okhttp3:logging-interceptor:4.4.0")
+
+    implementation daggerDependencies.dagger
+    implementation daggerDependencies.daggerAndroid
+    implementation daggerDependencies.daggerAndroidSupport
+    kapt daggerDependencies.kapDaggerCompiler
+    kapt daggerDependencies.kapDaggerAndroidProcessor
+}

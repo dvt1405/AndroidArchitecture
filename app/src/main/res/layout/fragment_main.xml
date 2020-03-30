@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#00ffffff">
+
+    <Button
+        android:id="@+id/launchMap"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="28dp"
+        android:background="@drawable/background"
+        android:backgroundTint="#7076C7"
+        android:text="Maps"
+        android:textAppearance="@style/BaseAppStyle.TextAppear"
+        android:textSize="40sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent="0.88" />
+
+    <Button
+        android:id="@+id/launchImage"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="28dp"
+        android:background="@drawable/background"
+        android:backgroundTint="#486C8F"
+        android:text="List Images"
+        android:textAppearance="@style/BaseAppStyle.TextAppear"
+        app:layout_constraintHeight_percent="0.25"
+        app:layout_constraintStart_toStartOf="@+id/launchMap"
+        app:layout_constraintTop_toBottomOf="@+id/launchMap"
+        app:layout_constraintWidth_percent="0.4" />
+
+    <Button
+        android:id="@+id/launchDashboard"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="28dp"
+        android:background="@drawable/background"
+        android:backgroundTint="#96C08B"
+        android:text="Base UI"
+        android:textAppearance="@style/BaseAppStyle.TextAppear"
+        app:layout_constraintEnd_toEndOf="@+id/launchMap"
+        app:layout_constraintHeight_percent="0.3"
+        app:layout_constraintTop_toBottomOf="@+id/launchMap"
+        app:layout_constraintWidth_percent="0.4" />
+
+    <Button
+        android:id="@+id/launchSettings"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/background"
+        android:backgroundTint="#700548"
+        android:text="My pictures"
+        android:textAllCaps="false"
+        android:textAppearance="@style/BaseAppStyle.TextAppear"
+        app:layout_constraintHeight_percent="0.3"
+        app:layout_constraintStart_toStartOf="@+id/launchImage"
+        app:layout_constraintTop_toBottomOf="@+id/launchImage"
+        app:layout_constraintWidth_percent="0.4" />
+
+    <Button
+        android:id="@+id/launchLogin"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/background"
+        android:backgroundTint="#362023"
+        android:text="Logout"
+        android:textAppearance="@style/BaseAppStyle.TextAppear"
+        app:layout_constraintEnd_toEndOf="@+id/launchDashboard"
+        app:layout_constraintHeight_percent="0.25"
+        app:layout_constraintTop_toBottomOf="@+id/launchDashboard"
+        app:layout_constraintWidth_percent="0.4" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

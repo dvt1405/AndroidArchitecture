@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "524378305451",
+    "firebase_url": "https://baseprojectclean.firebaseio.com",
+    "project_id": "baseprojectclean",
+    "storage_bucket": "baseprojectclean.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:524378305451:android:f2cfac7a6fa953696098ee",
+        "android_client_info": {
+          "package_name": "tun.kt.service"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "524378305451-k9cglmt21hktf141sbb0krte4mgvl63d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAp15TxBM5HHVNCGVWJIvXmybEysrO5Hgw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "524378305451-k9cglmt21hktf141sbb0krte4mgvl63d.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

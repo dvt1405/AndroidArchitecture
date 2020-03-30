@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="zoom_in">+</string>
+    <string name="zoom_out">-</string>
+    <color name="colorTextWhite">#FFFFFF</color>
+</resources>

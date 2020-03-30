@@ -1,0 +1,8 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="tun.kt.service">
+
+    <application>
+        <receiver android:name=".broadcast.TimeBroadCast">
+        </receiver>
+    </application>
+</manifest>

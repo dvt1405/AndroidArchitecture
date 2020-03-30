@@ -1,0 +1,6 @@
+<resources>
+    <string name="dashBoard">Start Login</string>
+    <string name="map">Start Map</string>
+    <string name="capture">Capture</string>
+    <string name="delete">Delete</string>
+</resources>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navi"
+    app:startDestination="@id/loginFragment2">
+    <fragment
+        android:id="@+id/mainActivity"
+        android:name="tun.kt.baseprojectroxwin.fragment.HomeFragment"
+        android:label="@string/home"
+        tools:layout="@layout/fragment_main">
+        <action
+            android:id="@+id/action_mainActivity_to_loginFragment22"
+            app:destination="@id/loginFragment2" />
+        <action
+            android:id="@+id/action_mainActivity_to_dashboardFragment2"
+            app:destination="@id/dashboardFragment2" />
+        <action
+            android:id="@+id/action_mainActivity_to_fragmentDisplayMap"
+            app:destination="@id/fragmentDisplayMap" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginFragment2"
+        android:name="tun.kt.login.LoginFragment"
+        android:label="LoginFragment"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_loginFragment2_to_mainActivity"
+            app:destination="@id/mainActivity">
+            <argument
+                android:name="isAuth"
+                android:defaultValue="false"
+                app:argType="boolean" />
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/dashboardFragment2"
+        android:name="tun.kt.dashboard.PaintFragment"
+        android:label="DashboardFragment"
+        tools:layout="@layout/fragment_dashboard">
+        <action
+            android:id="@+id/action_dashboardFragment2_to_loginFragment2"
+            app:destination="@id/loginFragment2" />
+        <action
+            android:id="@+id/action_dashboardFragment2_to_displayImageFragment"
+            app:destination="@id/displayImageFragment">
+            <argument
+                android:name="image"
+                app:argType="string" />
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentDisplayMap"
+        android:name="tun.kt.displaymap.FragmentDisplayMap"
+        android:label="fragment_map"
+        tools:layout="@layout/fragment_map" />
+    <fragment
+        android:id="@+id/displayImageFragment"
+        android:name="tun.kt.displayimage.DisplayImageFragment"
+        android:label="DisplayImageFragment"
+        tools:layout="@layout/fragment_display_image" >
+
+    </fragment>
+</navigation>

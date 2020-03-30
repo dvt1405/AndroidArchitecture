@@ -1,0 +1,9 @@
+<resources>
+    <string name="fragment">Fragment</string>
+    <string name="edit_text">Edit text</string>
+    <string name="go_to_dashboard">Go to dashboard</string>
+    <string name="go_to_main">Go to Main</string>
+    <string name="img">img</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+</resources>

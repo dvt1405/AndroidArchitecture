@@ -1,0 +1,54 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.2"
+
+    defaultConfig {
+        minSdkVersion 21
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles 'consumer-rules.pro'
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation appDependencies.kotlinJdk
+    implementation appDependencies.appCompat
+    implementation appDependencies.coreKtx
+    implementation appDependencies.constrainLayout
+    testImplementation testDependencies.test
+    androidTestImplementation testDependencies.androidTest
+    androidTestImplementation testDependencies.androidTestEspresso
+
+    implementation project(':feature:subfeature')
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.2.1'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.2.1'
+
+    kapt daggerDependencies.kapDaggerCompiler
+    kapt daggerDependencies.kapDaggerAndroidProcessor
+    implementation daggerDependencies.dagger
+    implementation daggerDependencies.daggerAndroid
+    implementation daggerDependencies.daggerAndroidSupport
+    implementation "com.github.valeryponomarenko.componentsmanager:androidx:2.0.1"
+
+    implementation project(':appcore:basedata')
+    implementation project(':appcore:baseusecase')
+    implementation project(':appcore:baseservice')
+    implementation project(':appcore:baseui')
+    implementation project(':appcore')
+}

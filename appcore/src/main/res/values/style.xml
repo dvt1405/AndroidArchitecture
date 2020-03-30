@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="BaseAppStyle" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:textAppearance">@style/BaseAppStyle.TextStyle</item>
+        <item name="android:windowActivityTransitions">true</item>
+    </style>
+    <style name="BaseAppStyle.TextStyle">
+        <item name="android:textColor">@color/color_text</item>
+        <item name="android:textSize">70sp</item>
+    </style>
+</resources>

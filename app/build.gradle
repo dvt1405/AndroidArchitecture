@@ -1,0 +1,104 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'androidx.navigation.safeargs.kotlin'
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.2"
+
+    defaultConfig {
+        applicationId "tun.kt.baseprojectroxwin"
+        minSdkVersion 21
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    dataBinding {
+        enabled = true
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation appDependencies.kotlinJdk
+    implementation appDependencies.appCompat
+    implementation appDependencies.coreKtx
+    implementation appDependencies.constrainLayout
+    testImplementation testDependencies.test
+    androidTestImplementation testDependencies.androidTest
+    androidTestImplementation testDependencies.androidTestEspresso
+
+    implementation archComponentDependencies.pagingRuntime
+    implementation archComponentDependencies.pagingRxjava
+    testImplementation archComponentDependencies.pagingTesting
+
+    implementation archComponentDependencies.navigationFragment
+    implementation archComponentDependencies.navigationUI
+    implementation archComponentDependencies.navigationDynamicFeature
+
+    kapt archComponentDependencies.roomDatabaseKapt
+    implementation archComponentDependencies.roomDatabaseRunTime
+    implementation archComponentDependencies.roomDatabaseKtx
+    androidTestImplementation archComponentDependencies.roomDatabaseTesting
+
+    kapt archComponentDependencies.archLifecycleVersionKapt
+    implementation archComponentDependencies.archLifecycleVersionExtension
+    implementation archComponentDependencies.archLifecycleViewModel
+    androidTestImplementation archComponentDependencies.archLifecycleVersionTesting
+
+    kapt daggerDependencies.kapDaggerCompiler
+    kapt daggerDependencies.kapDaggerAndroidProcessor
+    implementation daggerDependencies.dagger
+    implementation daggerDependencies.daggerAndroid
+    implementation daggerDependencies.daggerAndroidSupport
+
+    implementation rxJavaDependencies.rxAndroid
+    implementation rxJavaDependencies.rxKotlin
+
+    implementation retrofitDependencies.retrofit
+    implementation retrofitDependencies.retrofitRxJavaAdapter
+    implementation retrofitDependencies.retrofitGsonConverter
+
+    implementation googleDependencies.googlePlayCore
+    implementation googleDependencies.googleAndroidMapUtils
+    implementation googleDependencies.googlePlaySercicesMaps
+
+    implementation appDependencies.kotlinCoroutines
+    implementation appDependencies.kotlinCoroutinesAndroid
+
+    implementation otherLibraryDependencies.volley
+    implementation(otherLibraryDependencies.glide) {
+        exclude group: "com.android.support"
+    }
+    kapt otherLibraryDependencies.glideKapt
+    implementation otherLibraryDependencies.checkApi
+
+    implementation project(':appcore:basedata')
+    implementation project(':appcore:baseusecase')
+    implementation project(':appcore:baseservice')
+    implementation project(':appcore:baseui')
+
+    implementation project(':feature:featurelogin')
+    implementation project(':feature:featurepaint')
+    implementation project(':feature:featuredisplaymap')
+    implementation project(':feature:featuredisplayimage')
+
+    implementation "com.github.valeryponomarenko.componentsmanager:androidx:2.0.1"
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.2.2'
+
+}

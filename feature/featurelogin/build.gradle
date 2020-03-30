@@ -1,0 +1,71 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+apply plugin: "androidx.navigation.safeargs"
+
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.2"
+
+    defaultConfig {
+        minSdkVersion 21
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles 'consumer-rules.pro'
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation appDependencies.kotlinJdk
+    implementation appDependencies.appCompat
+    implementation appDependencies.coreKtx
+    implementation appDependencies.constrainLayout
+    testImplementation testDependencies.test
+    androidTestImplementation testDependencies.androidTest
+    androidTestImplementation testDependencies.androidTestEspresso
+
+    implementation archComponentDependencies.navigationFragment
+    implementation archComponentDependencies.navigationUI
+    implementation archComponentDependencies.navigationDynamicFeature
+
+    implementation(otherLibraryDependencies.glide) {
+        exclude group: "com.android.support"
+    }
+    kapt otherLibraryDependencies.glideKapt
+
+    implementation archComponentDependencies.archLifecycleVersionExtension
+    kapt archComponentDependencies.archLifecycleVersionKapt
+    androidTestImplementation archComponentDependencies.archLifecycleVersionTesting
+    implementation archComponentDependencies.archLifecycleViewModel
+
+    implementation appDependencies.kotlinCoroutines
+    implementation appDependencies.kotlinCoroutinesAndroid
+
+    kapt daggerDependencies.kapDaggerCompiler
+    kapt daggerDependencies.kapDaggerAndroidProcessor
+    implementation daggerDependencies.dagger
+    implementation daggerDependencies.daggerAndroid
+    implementation daggerDependencies.daggerAndroidSupport
+
+    implementation project(':appcore:basedata')
+    implementation project(':appcore:baseusecase')
+    implementation project(':appcore:baseservice')
+    implementation project(':appcore:baseui')
+    implementation project(':appcore')
+    implementation otherLibraryDependencies.checkApi
+
+}
